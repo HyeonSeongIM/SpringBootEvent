@@ -11,5 +11,7 @@ public class HighValueOrderListener {
     @EventListener(condition = "#event.amount >= 1000")
     public void handleHighValueOrder(OrderCreatedEvent event) {
         System.out.println("HighValueOrder Detected : " + event.getOrderId() + " / Amount : " + event.getAmount());
+
+        throw new IllegalArgumentException("이벤트 에러 테스트");
     }
 }
