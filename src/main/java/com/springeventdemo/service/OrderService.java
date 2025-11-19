@@ -13,8 +13,8 @@ public class OrderService {
         this.publisher = publisher;
     }
 
-    public void createdOrder(String orderId) {
+    public void createdOrder(String orderId, double amount) {
         System.out.println("Order created : " + orderId);
-        publisher.publishEvent(new OrderCreatedEvent(orderId));
+        publisher.publishEvent(new OrderCreatedEvent(orderId, amount));
     }
 }
